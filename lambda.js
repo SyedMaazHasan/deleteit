@@ -1,3 +1,16 @@
+
+
+const awsServerlessExpress = require('aws-serverless-express');
+
+//your node project code
+const app = require('./src/server');
+const yourNodeServer = awsServerlessExpress.createServer(app)
+
+
+module.exports.myhandler = (event, context) => awsServerlessExpress.proxy(yourNodeServer, event, context);
+
+
+
 //Lambda func structure
 exports.handler = async function(event, context, callback) {
 	
