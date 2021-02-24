@@ -6,13 +6,15 @@ class EventElement extends Component {
     console.log("parent clicked");
   };
   handleChildButtonClicked = (e) => {
+    e.stopPropagation();
+    
     console.log("child clicked");
   };
   render() {
     return (
-      <button onClick={(e)=>this.handleparentButtonClicked(e)}>
+      <button onClickCapture={(e)=>this.handleparentButtonClicked(e)}>
         parent button
-        <button onClick={(e) => this.handleChildButtonClicked(e)}>
+        <button onClickCapture={(e) => this.handleChildButtonClicked(e)}>
           child button
         </button>
       </button>
