@@ -6,8 +6,6 @@ class EventElement extends Component {
     console.log("parent clicked");
   };
   handleChildButtonClicked = (e) => {
-    console.log(e);
-    e.stopPropagation();
     console.log("child clicked");
   };
   render() {
